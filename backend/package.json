@@ -1,7 +1,11 @@
 {
     "name": "DailyDilbertBackend1",
     "version": "0.0.1",
-    
+
+    "dependencies": {
+        "request" : "2.27.x"
+    },
+        
     "devDependencies": {
     	"mocha" : "1.13.x",
         "chai" : "1.8.x"
