@@ -1,20 +1,29 @@
 {
-    "name": "DailyDilbertBackend1",
-    "version": "0.0.1",
-
-    "dependencies": {
-        "request" : "2.27.x",
-        "director" : "1.2.x"
-    },
-        
-    "devDependencies": {
-    	"mocha" : "1.13.x",
-        "chai" : "1.8.x"
-    },
-
-    "scripts": {
-    	"start": "node app.js",
+	"name": "DailyDilbertBackend1",
+	"description": "provides the daily dilbert image by proxying it through a web service",
+	"version": "0.0.1",
+	"author": "Manuel Naujoks",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/halllo/DailyDilbert"
+	},
+	"licenses": [
+		{
+			"type": "MIT",
+			"url": "http://www.opensource.org/licenses/MIT"
+		}
+	],
+	"dependencies": {
+		"request" : "2.27.x",
+		"director" : "1.2.x"
+	},
+	"devDependencies": {
+		"mocha" : "1.13.x",
+		"chai" : "1.8.x"
+	},
+	"scripts": {
+		"start": "node app.js",
 		"test": "node_modules\\.bin\\mocha -R spec"
-    }
+	}
 }
  
