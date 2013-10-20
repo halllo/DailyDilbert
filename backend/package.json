@@ -23,7 +23,7 @@
 	},
 	"scripts": {
 		"start": "node app.js",
-		"test": mocha -R spec"
+		"test": "mocha -R spec"
 	}
 }
  
