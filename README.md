@@ -6,6 +6,6 @@ The backend is online at http://dailydilbert.eu01.aws.af.cm/
 
 ---
 
-Current Backend Build Status
-----------------------------
-[![Build Status](https://travis-ci.org/halllo/DailyDilbert.png)](https://travis-ci.org/halllo/DailyDilbert)
+Current Build Status
+--------------------
+Backend: [![Build Status](https://travis-ci.org/halllo/DailyDilbert.png)](https://travis-ci.org/halllo/DailyDilbert)

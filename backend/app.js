@@ -1,5 +1,4 @@
 var http = require("http");
-
 var routes = require("./routes.js");
 
 http.createServer(function (req, res) {
