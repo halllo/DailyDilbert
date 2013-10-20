@@ -50,8 +50,8 @@ var getIndexHtml = function(url) {
 		'<html>'+
 			'<head>'+
 			'</head>'+
-			'<body bgcolor="#FF69B4">'+
-				'<div style="width:200px; margin:0 auto;">'+
+			'<body bgcolor="#FF0080">'+
+				'<div style="width:200px; height:100px; position:absolute; margin-top:-80px; margin-left:-100px; top:50%; left:50%;">'+
 					'<h1>Daily Dilbert</h1>'+
 					'<div>'+
 						'get the <a href="/url">url</a>'+
@@ -59,6 +59,9 @@ var getIndexHtml = function(url) {
 					'<div>'+
 						'get the <a href="/image">image</a>'+
 					'</div>'+
+				'</div>'+
+				'<div style="width:100%; position:fixed; bottom:0px">'+
+					'This website proxies the daily dilbert image from <a href="http://dilbert.com/">dilbert.com</a>. All images are copyrighted by their respective owners. No images, ip addresses or anything at all are stored. This proxy is copyrighted by <a href="http://njks.de">Manuel Naujoks</a>.'+
 				'</div>'+
 			'</body>'+
 		'</html>';
