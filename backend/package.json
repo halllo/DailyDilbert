@@ -3,7 +3,8 @@
     "version": "0.0.1",
 
     "dependencies": {
-        "request" : "2.27.x"
+        "request" : "2.27.x",
+        "director" : "1.2.x"
     },
         
     "devDependencies": {
