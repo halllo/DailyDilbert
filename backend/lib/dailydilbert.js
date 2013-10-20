@@ -20,5 +20,13 @@ var getUrlFromDilbertCom = function(callback) {
 	});
 }
 
+var getImageFromDilbertCom = function(callback) {
+	getHtmlFromDilbertCom(function(html){
+		var url = getUrlFromHtml(html);
+		callback(request.get(url));
+	});
+}
+
 exports.urlIn = getUrlFromHtml;
 exports.urlOfToday = getUrlFromDilbertCom;
+exports.imageOfToday = getImageFromDilbertCom;
