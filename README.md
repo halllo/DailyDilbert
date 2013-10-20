@@ -1,4 +1,6 @@
 DailyDilbert
 ============
 
-provides the daily dilbert
+provides the daily dilbert image by proxying it through a web service
+
+backend: http://dailydilbert.eu01.aws.af.cm/
