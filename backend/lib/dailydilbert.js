@@ -10,7 +10,7 @@ var getHtmlFromDilbertCom = function(callback) {
 		if (!error && response.statusCode == 200) {
 			callback(html);
 		}
-	})
+	});
 }
 
 var getUrlFromDilbertCom = function(callback) {

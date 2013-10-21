@@ -7,7 +7,7 @@ var router = new director.http.Router({
 			var response = this.res;
 			dailyDilbert.urlOfToday(function(url){
 				response.writeHead(200, {"Content-Type": "text/html"});
-		  		response.end(getIndexHtml(url))
+		  		response.end(getIndexHtml(url));
   			});
 		}
 	},
@@ -15,7 +15,7 @@ var router = new director.http.Router({
 		get: function() {
 			var response = this.res;
 			dailyDilbert.urlOfToday(function(url){
-				response.writeHead(200, { 'Content-Type': 'text/plain' })
+				response.writeHead(200, {"Content-Type": "text/plain"});
 		    	response.end(url);
 			});
 		}
@@ -33,7 +33,7 @@ var router = new director.http.Router({
 var dispatchRequest = function(req, res) {
 	router.dispatch(req, res, function (err) {
 		if (err) {
-			res.writeHead(404, { 'Content-Type': 'text/plain' })
+			res.writeHead(404, {"Content-Type": "text/plain"})
 		    res.end("404");
 		}
 	});
