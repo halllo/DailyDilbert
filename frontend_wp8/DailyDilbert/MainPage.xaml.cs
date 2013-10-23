@@ -1,4 +1,5 @@
 ﻿using Microsoft.Phone.Controls;
+using Microsoft.Phone.Tasks;
 using System;
 using System.Windows;
 using System.Windows.Input;
@@ -18,8 +19,35 @@ namespace DailyDilbert
 		async void MainPage_Loaded(object sender, RoutedEventArgs e)
 		{
 			new UpdateDailyDilbertImageAgent().StartPeriodicAgent();
+
+			var cachedDailyDilbertImageUrl = DailyDilbertLogic.GetCachedDailyDilbertImageUrl();
+			if (cachedDailyDilbertImageUrl != null)
+			{
+				DailyDilbertImage.Source = new BitmapImage() { UriSource = cachedDailyDilbertImageUrl };
+			}
+			else
+			{
+				ReloadDailyDilbertImage();
+			}
+		}
+
+		async void ReloadDailyDilbertImage()
+		{
+			loadingProgressBar.Visibility = Visibility.Visible;
 			var dailyDilbertImageUrl = await DailyDilbertLogic.GetImageUrl();
 			DailyDilbertImage.Source = new BitmapImage() { UriSource = dailyDilbertImageUrl };
+			loadingProgressBar.Visibility = Visibility.Collapsed;
+		}
+
+		async void ApplicationBarIconButton_Click(object sender, EventArgs e)
+		{
+			DailyDilbertImage.Source = null;
+			ReloadDailyDilbertImage();
+		}
+
+		private void ApplicationBarMenuItem_Click(object sender, EventArgs e)
+		{
+			new WebBrowserTask { Uri = new Uri("http://dilbert.com", UriKind.Absolute) }.Show();
 		}
 
 		#region zoom and pan logic from Microsoft: http://code.msdn.microsoft.com/wpapps/Image-Recipes-0c0b8fee
@@ -174,7 +202,7 @@ namespace DailyDilbert
 
 			_coercedScale = Math.Min(MaxScale, Math.Max(_scale, _minScale));
 
-		} 
+		}
 		#endregion
 	}
 }

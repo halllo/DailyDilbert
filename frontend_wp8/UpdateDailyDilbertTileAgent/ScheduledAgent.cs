@@ -26,10 +26,12 @@ namespace UpdateDailyDilbertTileAgent
 
 		protected override void OnInvoke(ScheduledTask task)
 		{
-			Task<Uri> dailyDilbertImageUrl = DailyDilbert.DailyDilbertLogic.GetImageUrl();
-			dailyDilbertImageUrl.ContinueWith(t => 
+			Task<Uri> dailyDilbertImageUrlFuture = DailyDilbert.DailyDilbertLogic.GetImageUrl();
+			dailyDilbertImageUrlFuture.ContinueWith(t =>
 			{
-				DailyDilbert.DailyDilbertLogic.UpdateTile(t.Result);
+				var dailyDilbertImageUrl = t.Result;
+				DailyDilbert.DailyDilbertLogic.Cache(dailyDilbertImageUrl);
+				DailyDilbert.DailyDilbertLogic.UpdateTile(dailyDilbertImageUrl);
 				NotifyComplete();
 			});
 		}
