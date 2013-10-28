@@ -33,15 +33,14 @@ namespace DailyDilbert
 
 		async void ReloadDailyDilbertImage()
 		{
-			loadingProgressBar.Visibility = Visibility.Visible;
 			var dailyDilbertImageUrl = await DailyDilbertLogic.GetImageUrl();
 			DailyDilbertImage.Source = new BitmapImage() { UriSource = dailyDilbertImageUrl };
-			loadingProgressBar.Visibility = Visibility.Collapsed;
 		}
 
 		async void ApplicationBarIconButton_Click(object sender, EventArgs e)
 		{
 			DailyDilbertImage.Source = null;
+			loadingProgressBar.Visibility = System.Windows.Visibility.Visible;
 			ReloadDailyDilbertImage();
 		}
 
@@ -139,6 +138,8 @@ namespace DailyDilbert
 		/// </summary> 
 		void OnImageOpened(object sender, RoutedEventArgs e)
 		{
+			loadingProgressBar.Visibility = Visibility.Collapsed;
+
 			_bitmap = (BitmapImage)DailyDilbertImage.Source;
 
 			// Set scale to the minimum, and then save it. 
