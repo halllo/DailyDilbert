@@ -22,8 +22,6 @@ namespace DailyDilbert
 			}
 			catch (Exception)
 			{
-
-				throw;
 			}
 		}
 
