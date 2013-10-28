@@ -18,7 +18,7 @@ namespace DailyDilbert
 
 		async void MainPage_Loaded(object sender, RoutedEventArgs e)
 		{
-			new UpdateDailyDilbertImageAgent().StartPeriodicAgent();
+			new UpdateBackgroundAgent().StartPeriodicAgent();
 
 			var cachedDailyDilbertImageUrl = DailyDilbertLogic.GetCachedDailyDilbertImageUrl();
 			if (cachedDailyDilbertImageUrl != null)

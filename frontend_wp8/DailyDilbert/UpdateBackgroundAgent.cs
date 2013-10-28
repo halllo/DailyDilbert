@@ -7,7 +7,7 @@ namespace DailyDilbert
 	/// <summary>
 	/// start background agents logic from Microsoft: http://msdn.microsoft.com/en-us/library/windowsphone/develop/hh202941(v=vs.105).aspx
 	/// </summary>
-	public class UpdateDailyDilbertImageAgent
+	public class UpdateBackgroundAgent
 	{
 		PeriodicTask periodicTask;
 		string periodicTaskName = "PeriodicAgent";
