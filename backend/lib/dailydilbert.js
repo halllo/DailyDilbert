@@ -1,8 +1,14 @@
 var request = require("request");
 
-var regex = /title="Dilbert.com"><img src="(.*?)"/;
+var regex = /data-url="http:\/\/dilbert.com\/strip\/.*?" data-image="(.*?)"/;
 var getUrlFromHtml = function(html) {
-	return html.match(regex)[1];
+	var matches = html.match(regex);
+	if (matches != null)
+	{
+		return matches[1];
+	} else {
+		return "cannot.find.url";
+	}
 }
 
 var getHtmlFromDilbertCom = function(callback) {

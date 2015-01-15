@@ -5,9 +5,9 @@ var dailyDilbert = require("../lib/dailydilbert.js");
 
 describe("INTEGRATIONTEST", function(){
 	describe("daily dilbert url", function(){
-		it("should be a gif", function(done){
+		it("should be a url", function(done){
 			dailyDilbert.urlOfToday(function(url){
-				expect(url).to.match(/http:\/\/.*?.gif/);
+				expect(url).to.match(/http:\/\/.*/);
 				done();
 			});
 		})
