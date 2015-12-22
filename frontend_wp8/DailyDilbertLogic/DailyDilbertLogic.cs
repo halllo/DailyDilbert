@@ -28,7 +28,7 @@ namespace DailyDilbert
 		public static async Task<Uri> GetImageUrl()
 		{
 			var httpClient = new HttpClient();
-			var dailyDilbertImageUrl = await httpClient.GetStringAsync("http://dailydilbert.eu01.aws.af.cm/url?" + DateTime.Now.Ticks);
+			var dailyDilbertImageUrl = await httpClient.GetStringAsync("http://dailydilbert2.azurewebsites.net/url?" + DateTime.Now.Ticks);
 			return new Uri(dailyDilbertImageUrl, UriKind.Absolute);
 		}
 
