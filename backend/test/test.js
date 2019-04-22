@@ -24,6 +24,12 @@ describe("dailyDilbert", function(){
 				"http://assets.amuniversal.com/ac92e9c070e40132b90b005056a9545d",
 				done);
 		})
+		it("should return the correct URL on 2019-04-22", function(done){
+			expectDailyDilbertUrl(
+				"test/data/dilbertcom_20190422.html",
+				"https://assets.amuniversal.com/2f49485036d001378f10005056a9545d",
+				done);
+		})
 	})
 })
 

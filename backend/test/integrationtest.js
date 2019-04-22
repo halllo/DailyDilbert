@@ -7,7 +7,7 @@ describe("INTEGRATIONTEST", function(){
 	describe("daily dilbert url", function(){
 		it("should be a url", function(done){
 			dailyDilbert.urlOfToday(function(url){
-				expect(url).to.match(/http:\/\/.*/);
+				expect(url).to.match(/http(s)?:\/\/.*/);
 				done();
 			});
 		})
