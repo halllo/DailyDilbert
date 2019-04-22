@@ -1,7 +1,7 @@
 language: node_js
 
 node_js:
-  - "v0.10.48"
+  - "v10.15.0"
 
 before_script:
   - cd backend
