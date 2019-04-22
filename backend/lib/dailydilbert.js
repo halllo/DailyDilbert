@@ -5,7 +5,7 @@ var getUrlFromHtml = function(html) {
 	var matches = html.match(regex);
 	if (matches != null)
 	{
-		let dataImage = matches[1];
+		var dataImage = matches[1];
 		if (dataImage.startsWith('//')) {
 			dataImage = 'https:' + dataImage;
 		}
